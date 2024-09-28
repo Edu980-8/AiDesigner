@@ -3,6 +3,7 @@ import InputField from "./components/InputField";
 import Color_Selector from "./components/Color_Selector";
 import GoogleFonts from "./components/GoogleFonts";
 import Modal from "./components/Modal"; // Asegúrate de tener un componente Modal
+import Post_to_back from "./components/Post_to_back";
 
 const filter_information = [
   {
@@ -98,13 +99,11 @@ function App() {
           }
         />
 
-        <button
-          type="submit"
-          className="bg-orange-500 hover:bg-orange-700 text-white font-bold px-4 py-2 rounded w-full mt-4"
-          onClick={openModal}
-        >
-          Enviar
-        </button>
+        <Post_to_back
+          selectedValues={selectedValues}
+          selectedFont={selectedFont}
+          openModal={openModal}
+        />
       </div>
 
       {modalVisible && <Modal onClose={closeModal} />}
